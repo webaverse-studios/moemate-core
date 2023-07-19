@@ -1,0 +1,8 @@
+{
+    "type": "conversation",
+    "conversation": [
+        {{#each recent_conversation}}
+            {{ stringify this }}{{#unless @last}},{{/unless}}
+        {{/each}}
+    ]
+}

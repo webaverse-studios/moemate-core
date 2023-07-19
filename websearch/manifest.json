@@ -1,0 +1,30 @@
+{
+  "name": "moemate-websearch",
+  "title": "Web Search",
+  "description": "Gives the companion the ability to search the web for information",
+  "authors": [
+    {
+      "name": "Webaverse",
+      "email": "support@webaverse.com",
+      "url": "https://www.moemate.io"
+    }
+  ],
+  "version": "1.0",
+  "compatibility": {
+    "minimum": "0.8.8",
+    "verified": "0.8.8"
+  },
+  "prompts": [
+    "prompts/websearch.hbs",
+    "prompts/news.hbs"
+  ],
+  "models": [
+    "models/bingsearch.json.hbs"
+  ],
+  "skills": [
+    "skills/websearch.json.hbs"
+  ],
+  "scripts": [
+    "scripts/websearch.js"
+  ]
+}

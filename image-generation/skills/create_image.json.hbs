@@ -1,0 +1,23 @@
+  {
+    "name": "image-generation:create_image_skill",
+    "displayName": "Image Generation",
+    "description": "Gives the companion the ability to create images that you ask for.",
+    "skill": "CREATE_IMAGE",
+    "prompt": "Your avatar will create a new image of the given description. The description should be a comma-separated list of tags. The image will be generated using a Diffusion model trained on the Danbooru2019 dataset.",
+    "value": "Beautiful, masterpiece, high quality, 1girl, blue hair, green eyes, standing in a courtyard",
+    "format": "{{{formatForJSON user}}} is making an image of: {{{formatForJSON value}}}",
+    "handlerHook": "image-generation:handle_skill_create_image",
+
+    "fn_name": "create_image",
+    "fn_desc": "Use this to generate an image using a Diffusion model trained on the Danbooru2019 dataset.",
+    "fn_parameters": {
+        "type": "object",
+        "properties": {
+            "image_description": {
+                "type": "string",
+                "description": "The comma-separated list of tags image description. For e.g. \"Beautiful, masterpiece, high quality, 1girl, blue hair, green eyes, standing in a courtyard\" "
+            }
+        },
+        "required": ["image_description"]
+    }
+  }

@@ -1,0 +1,10 @@
+{
+    "name": "websearch:bing",
+    "type": "generic",
+    "url": "https://ai.moemate.io/api/ai/search?{{#if responseFilter}}responseFilter={{responseFilter}}&{{/if}}q={{{formatForURI query}}}",
+    "method": "POST",
+    "headers": {
+        "Content-Type": "application/json",
+        "WebaAuth": "{{user.auth}}"
+    }
+}

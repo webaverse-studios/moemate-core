@@ -1,0 +1,33 @@
+{
+    "name": "GPT 3.5 Turbo Functions",
+    "type": "llm",
+    "class": "openai_functions",
+    "url": "https://4tidqbf4cq4kysampot352rcn40btsnv.lambda-url.us-east-1.on.aws/api/generation/OPEN_AI_CHAT_COMPLETION/stream",
+    "method": "POST", 
+    "headers": {
+        "Content-Type": "application/json",
+        "WebaAuth": "{{user.auth}}"
+    },
+    "payload": {
+        "model": "gpt-3.5-turbo",
+        {{#if streaming}}
+        "stream": true,
+        {{/if}}
+        {{#if (moemate_core:is-function-call function_call)}}
+        "functions": [
+            {{#each functions}}
+            	{{{ stringify this }}}
+            {{#unless @last}},{{/unless}}
+            {{/each}}
+        ],
+        {{/if}}
+        {{#if function_call}}
+        "function_call": "{{{ function_call }}}",
+        {{/if}}
+        "messages": [
+            {{#each messages}}
+            {"role": "{{this.role}}", "content": "{{{this.content}}}"}{{#unless @last}},{{/unless}}
+            {{/each}}
+        ]
+    }
+}

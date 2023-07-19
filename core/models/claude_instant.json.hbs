@@ -1,0 +1,20 @@
+{
+    "name": "Claude-instant v1.1",
+    "type": "llm",
+    "class": "anthropic",
+    "url": "https://4tidqbf4cq4kysampot352rcn40btsnv.lambda-url.us-east-1.on.aws/api/generation/CLAUDE_COMPLETION/stream",
+    "method": "POST", 
+    "headers": {
+        "Content-Type": "application/json",
+        "WebaAuth": "{{user.auth}}"
+    },
+    "payload": {
+        "model": "claude-instant-v1.1-100k",
+        "max_tokens_to_sample": 150, 
+        "stop_sequences": ["\\n\\nHuman:"],
+        {{#if streaming}}
+        "stream": true,
+        {{/if}}
+        "prompt": "{{{moemate_core:format-for-claude messages}}}"
+    }
+}

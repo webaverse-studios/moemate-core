@@ -1,0 +1,22 @@
+{
+    "name": "GPT 3.5 Turbo",
+    "type": "llm",
+    "class": "openai",
+    "url": "https://4tidqbf4cq4kysampot352rcn40btsnv.lambda-url.us-east-1.on.aws/api/generation/OPEN_AI_CHAT_COMPLETION/stream",
+    "method": "POST", 
+    "headers": {
+        "Content-Type": "application/json",
+        "WebaAuth": "{{user.auth}}"
+    },
+    "payload": {
+        "model": "gpt-3.5-turbo",
+        {{#if streaming}}
+        "stream": true,
+        {{/if}}
+        "messages": [
+            {{#each messages}}
+            {"role": "{{this.role}}", "content": "{{{this.content}}}"}{{#unless @last}},{{/unless}}
+            {{/each}}
+        ]
+    }
+}

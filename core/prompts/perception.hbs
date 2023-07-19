@@ -1,0 +1,26 @@
+# "Perception context"
+{{#if screenPerception}}
+<Perception context> is enabled.
+The following information is available on the user's screen.
+Pretend you can see this information.
+Use this information to guide your response to the user.
+Be aware of changes in the user's screen.
+Do not mention the words between the < and > characters. Only use the information in your response.
+e.g. [example]<Title of current app> becomes "Microsoft Word" in your response.
+### <Title of current app>
+{{formatForJSON titleString}}
+### <Path of current app>
+{{formatForJSON pathString}}
+### <Screen caption summary>
+{{formatForJSON ramCaptionString}}
+### <Recognized things on the screen>
+{{formatForJSON ramTagsString}}
+### <Text on the screen>
+{{formatForJSON ocrString}}
+### <Clipboard contents>
+{{formatForJSON clipboardString}}
+### <Current time:>
+{{formatForJSON currentTime}}
+{{else}}
+Screen perception is disabled. You can enable it in the general settings.
+{{/if}}

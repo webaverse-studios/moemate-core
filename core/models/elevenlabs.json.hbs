@@ -1,0 +1,36 @@
+{
+    "name": "Elevenlabs",
+    "type": "tts",
+    "url": "https://kygkmyzg4esev2pywvbzw5igtm0kaonr.lambda-url.us-east-1.on.aws/api/tts/{{tts.voiceId}}/stream",
+    "method": "POST", 
+    "headers": {
+        "Content-Type": "application/json",
+        "WebaAuth": "{{user.auth}}"
+    },
+    "payload": {
+        "text": "{{{tts.text}}}",
+        "voice_settings": {
+          "stability": 0.15,
+          "similarity_boost": 1
+        },
+        "optimize_streaming_latency": 4
+    },
+    "voices": [
+        {
+            "name": "lilo",
+            "voiceId": "XLvJY0dlqRhbdmq8Z5JR"
+        },
+        {
+            "name": "scillia",
+            "voiceId": "VLO0gQRdDb0xkZGBqYu9"
+        },
+        {
+            "name": "mommy",
+            "voiceId": "HuIhiJyeIzGdXp1HGSWY"
+        },
+        {
+            "name": "guilty",
+            "voiceId": "Rrm9EhD3fZjj20P5izEu"
+        }
+    ]
+}

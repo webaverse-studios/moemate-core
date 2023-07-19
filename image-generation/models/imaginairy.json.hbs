@@ -1,0 +1,14 @@
+{
+    "name": "ImaginAIry",
+    "type": "img",
+    "url": "https://api.dev.moemate.io/img/imagine",
+    "method": "POST",
+    "headers": {
+        "Content-Type": "application/json",
+        "WebaAuth": "{{user.auth}}"
+    },
+    "payload": {
+        "prompt_text": "high res masterpiece trending on artstation {{prompt}}",
+        "upscale": true
+    }
+}

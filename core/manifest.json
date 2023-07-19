@@ -1,0 +1,72 @@
+{
+  "name": "moemate_core",
+  "title": "Moemate Core",
+  "description": "This module is required for the basic conversational capabilities of Moemate.",
+  "authors": [
+    {
+      "name": "Webaverse",
+      "email": "support@webaverse.com",
+      "url": "https://www.moemate.io"
+    }
+  ],
+  "version": "1.0",
+  "compatibility": {
+    "minimum": "0.8.8",
+    "verified": "0.8.8"
+  },
+  "models": [
+    "models/gpt4_functions.json.hbs",
+    "models/gpt3.5turbo_functions.json.hbs",
+    "models/claude_instant.json.hbs",
+    "models/claude.json.hbs",
+    "models/gpt4.json.hbs",
+    "models/gpt3.5turbo.json.hbs",
+    "models/elevenlabs.json.hbs",
+    "models/talknet.json.hbs",
+    "models/azurespeech.json.hbs"
+  ],
+  "skills": [
+    "skills/emote.json.hbs",
+    "skills/expression.json.hbs",
+    "skills/mood.json.hbs",
+    "skills/settings_change.json.hbs",
+    "skills/text.json.hbs",
+    "skills/stop.json.hbs"
+  ],
+  "prompts": [
+    "prompts/characters_functions.hbs",
+    "prompts/characters.hbs",
+    "prompts/claude_expansion.hbs",
+    "prompts/claude_gaslight.hbs",
+    "prompts/conversation_flow.hbs",
+    "prompts/conversation_guide.hbs",
+    "prompts/conversation.hbs",
+    "prompts/extract_information.hbs",
+    "prompts/force_questions_functions.hbs",
+    "prompts/force_questions.hbs",
+    "prompts/force_task.hbs",
+    "prompts/generate_importance.hbs",
+    "prompts/generate_importance_score_batch.hbs",
+    "prompts/generate_response.hbs",
+    "prompts/generate_response_functions.hbs",
+    "prompts/intro.hbs",
+    "prompts/memories.hbs",
+    "prompts/perception.hbs",
+    "prompts/skills.hbs",
+    "prompts/tasks.hbs",
+    "prompts/user.hbs"
+  ],
+  "components": [
+    "components/tts-settings.jsx",
+    "components/upload-txt.jsx"
+  ],
+  "scripts": [
+    "scripts/core.js",
+    "scripts/skills/text.js",
+    "scripts/skills/stop.js",
+    "scripts/skills/emote.js",
+    "scripts/skills/mood.js",
+    "scripts/skills/expression.js",
+    "scripts/skills/settings_change.js"
+  ]
+}

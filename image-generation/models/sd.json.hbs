@@ -1,0 +1,34 @@
+{
+    "name": "SD:lyriel",
+    "type": "img",
+    "url": "https://sd.webaverse.ai/sdapi/v1/txt2img",
+    "method": "POST",
+    "headers": {
+        "Content-Type": "application/json",
+        "WebaAuth": "{{user.auth}}"
+    },
+    "payload": {
+        "enable_hr": true,
+        "denoising_strength": 0.25,
+        "firstphase_width": 512,
+        "firstphase_height": 512,
+        "hr_scale": 1.5,
+        "hr_upscaler": "R-ESRGAN 4x+",
+        "hr_second_pass_steps": 10,
+        "hr_sampler_name": "Euler a",
+        "prompt": "high res, masterpiece, trending on artstation, {{prompt}}",
+        "seed": -1,
+        "sampler_name": "Euler a",
+        "batch_size": 1,
+        "steps": 35,
+        "cfg_scale": 7,
+        "width": 512,
+        "height": 512,
+        "do_not_save_samples": true,
+        "do_not_save_grid": true,
+        "negative_prompt": "bad face, ugly, bad quality, low res, low quality, bad lighting, bad angle, bad composition, bad colors, bad contrast, bad saturation, bad exposure, bad focus, bad framing, bad crop, bad resolution, bad texture, bad rendering, bad shading, bad shadow, ((nude, loli, child))",
+        "sampler_index": "Euler a",
+        "send_images": true,
+        "save_images": false
+    }
+}

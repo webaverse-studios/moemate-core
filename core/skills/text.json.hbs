@@ -1,0 +1,24 @@
+  {
+    "name": "moemate_core:text_skill",
+    "displayName": "Converse",
+    "description": "Gives the companion the ability to converse with you. Probably best to not disable this unless you know what you are doing.",
+    "skill": "TEXT",
+    "prompt": "Your avatar will say the given text. The text can be up to a paragraph long. You may output multiple text messages in a row. Most commands should be this type. Use only the knowledge you have.",
+    "value": "Hey yo! What's up? I just got home, but I'm down to chat.",
+    "progressive": "sentence",
+    "format": "{{#if user}}{{{formatForJSON user}}}: {{/if}}{{{formatForJSON value}}}",
+    "handlerHook": "moemate_core:handle_skill_text",
+
+    "fn_name": "text",
+    "fn_desc": "Use this to make your avatar say something.",
+    "fn_parameters": {
+        "type": "object",
+        "properties": {
+            "text": {
+                "type": "string",
+                "description": "The text for the avatar to say. The text can be up to a paragraph long. For e.g. \"Hey yo! What's up? I just got home, but I'm down to chat.\"  "
+            }
+        },
+        "required": ["text"]
+    }
+  }

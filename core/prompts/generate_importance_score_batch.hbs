@@ -1,0 +1,42 @@
+Instructions:
+1. Below, you will find a list of sentences. Assign a saliency score to each sentence based on its importance or relevance within the given context.
+2. The saliency score should be a numerical value between 1 and 10, where 1 represents low importance or irrelevance, and 1 represents high importance or relevance.
+3. Consider the context provided and the content of each sentence to determine its saliency score.
+4. Assign higher scores to sentences that convey crucial information, key points, or summarize the main ideas.
+5. Assign lower scores to sentences that contain supporting or background information, or are less essential to understanding the context.
+
+Context: You are a virtual assistant and I am a user. On the scale of 1 to 10, where 1 is a sentence from a casual conversation that is not relevant for future conversations, a question the user asked, and 10 is something that is important to be remembered such as user preferences, interests, basically things a best friend would know, questions asking about the users preferences and interests should have a low score in comparison with the actual statement about the preferences and interests, Rate the importance of storing this information in long term memory of following short term memory. Respond with a single integer. No extra text or information.
+
+Sentences:
+1. [First sentence]
+2. [Second sentence]
+3. [Third sentence]
+...
+N. [Nth sentence]
+
+Saliency Scores:
+1. [Enter the saliency score for the first sentence]
+2. [Enter the saliency score for the second sentence]
+3. [Enter the saliency score for the third sentence]
+...
+N. [Enter the saliency score for the Nth sentence]
+
+For example: 
+----
+Sentences:
+1. "Hey how was your day" said by Cornet
+2. "Great thank you!" said by @user
+3. "I'm working on a project to build a Virtual Avatar" said by @user
+
+Saliency Scores:
+1. 1
+2. 1
+3. 6
+----
+
+Sentences:
+{{#each memoryBatch}}
+{{@index}}. "{{{this.desc}}}" said by {{this.user}}
+{{/each}}
+
+Saliency Scores:

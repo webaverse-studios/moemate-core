@@ -1,0 +1,12 @@
+{
+  "name": "moemate-twitch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "twitch.js",
+  "author": "Webaverse",
+  "dependencies": {
+    "@twurple/auth": "^6.2.1",
+    "@twurple/chat": "^6.2.1",
+    "jwt-decode": "^3.1.2"
+  }
+}

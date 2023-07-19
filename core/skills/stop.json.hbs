@@ -1,0 +1,17 @@
+{
+    "name": "moemate_core:stop_skill",
+    "displayName": "Stop Talking",
+    "description": "Gives the companion the ability to pause the conversation. Probably best not to disable this unless you know what you are doing.",
+    "skill": "STOP",
+    "prompt": "Pause the conversation. Use cases when you should pause the conversation: \n- Use it to wait for the user to respond.\n- When the current conversation is over.\n- When the conversation is one-sided (i.e. you are spamming the user with messages).\n- When you have spoken too much.\n- Look at how many messages have been exchanged recently from your side and see if that is too many, if the answer is yes, use the stop skill.  For example, if you have said 3-4 messages in a row without a user response, trigger the STOP skill.\n- When you have said 3-4 messages in a row without a user response.\n- Check the recent conversation context to determine if STOP is appropriate. For example, see if you are in the middle of a web search or have been speaking for a while without input from the user.\n- When the user asks you to stop.\n- When you are searching the web and waiting for the result to show up in current tasks",
+    "value": true,
+    "format": "Conversation paused",
+    "handlerHook": "moemate_core:handle_skill_stop",
+
+    "fn_name": "stop",
+    "fn_desc": "Use this to pause the conversation.",
+    "fn_parameters": {
+        "type": "object",
+        "properties": {}
+    }
+}

@@ -1,0 +1,28 @@
+  {
+    "name": "SEARCH_ON_WEB",
+    "displayName": "Web Search",
+    "description": "Gives the companion the ability to search the web for images, videos, news articles, or links",
+    "skill": "SEARCH_WEB",
+    "prompt": "Trigger a web search to find an answer to a query subject. You can search for Images, Videos, or Webpages. Specify which category you want to search for in parenthesis before the search query. If you are searching for weather, always use 'Webpages'",
+    "value": "(News) When is the next Barcelona FC match?",
+    "format": "{{{formatForJSON user}}} is searching the web for {{{formatForJSON value}}}",
+    "handlerHook": "websearch:handle_skill_websearch",
+
+    "fn_name": "search_web",
+    "fn_desc": "Use this to search the web search to find an answer to a query subject. You can search for Images, Videos, or Webpages. Specify which category you want to search for in parenthesis before the search query. If you are searching for weather, always use 'Webpages'",
+    "fn_parameters": {
+        "type": "object",
+        "properties": {
+            "category": {
+              "type": "string",
+              "description": "The category of the search. For e.g. 'Images', 'Videos', or 'Webpages' ",
+              "enum": ["Images", "Videos", "Webpages"]
+            },
+            "query_subject": {
+                "type": "string",
+                "description": "The query subject to search for"
+            }
+        },
+        "required": ["category", "query_subject"]
+    }
+  }

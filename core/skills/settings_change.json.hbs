@@ -1,0 +1,28 @@
+  {
+    "name": "moemate_core:settings_change_skill",
+    "displayName": "Change Settings",
+    "description": "Gives the companion the ability to change it's own settings if you ask it to.",
+    "skill": "SETTINGS_CHANGE",
+    "prompt": "{{settingsSkillDescription}}",
+    "value": "VOLUME=50",
+    "format": "{{{formatForJSON user}}} has set {{{formatForJSON value}}}",
+    "handlerHook": "moemate_core:handle_skill_settings_change",
+
+    "fn_name": "settings_change",
+    "fn_desc": "Use this to change the settings of the avatar",
+    "fn_parameters": {
+        "type": "object",
+        "properties": {
+            "setting_name": {
+              "type": "string",
+              "description": " The setting to change. For e.g. 'volume' ",
+              "enum": ["volume", "closedCaptions"]
+            },
+            "setting_value": {
+              "type": "string",
+              "description": "The value to set the setting to. For e.g. '0-100' for volume or 'true' or 'false' for closedCaptions"
+            }
+        },
+        "required": ["setting_name", "setting_value"]
+    }
+  }

@@ -1,0 +1,27 @@
+{
+  "name": "moemate-twitch",
+  "title": "Twitch Support",
+  "description": "Gives the companion the ability to stream with you on Twitch",
+  "authors": [
+    {
+      "name": "Webaverse",
+      "email": "support@webaverse.com",
+      "url": "https://www.moemate.io"
+    }
+  ],
+  "version": "1.0",
+  "compatibility": {
+    "minimum": "0.8.8",
+    "verified": "0.8.8"
+  },
+  "scripts": [
+    "scripts/bundled/twitch.bundle.js"
+  ],
+  "prompts": [
+    "prompts/twitch.hbs"
+  ],
+  "components": [
+    "components/TwitchSettings.jsx",
+    "components/TwitchMenuButton.jsx"
+  ]
+}

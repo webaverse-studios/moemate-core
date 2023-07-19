@@ -1,0 +1,20 @@
+{
+    "name": "ImaginAIry-Selfie",
+    "type": "img",
+    "url": "https://api.dev.moemate.io/img/imagine",
+    "method": "POST",
+    "headers": {
+        "Content-Type": "application/json",
+        "WebaAuth": "{{user.auth}}"
+    },
+    "payload": {
+        "prompt_text": "high res masterpiece trending on artstation {{prompt}}",
+        "control_inputs": [
+            {
+            "mode": "openpose",
+            "image_raw": "{{image}}",
+            "strength": 1
+            }
+        ]
+    }
+}

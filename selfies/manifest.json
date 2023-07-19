@@ -1,0 +1,26 @@
+{
+  "name": "moemate-selfie",
+  "title": "Selfie Generation with ControlNET",
+  "description": "Gives the companion the ability to make images of itself using ControlNET.",
+  "authors": [
+    {
+      "name": "Webaverse",
+      "email": "support@webaverse.com",
+      "url": "https://www.moemate.io"
+    }
+  ],
+  "version": "1.0",
+  "compatibility": {
+    "minimum": "0.9.0",
+    "verified": "0.9.0"
+  },
+  "models": [
+    "models/imaginairy-selfie.json.hbs"
+  ],
+  "skills": [
+    "skills/create_selfie.json.hbs"
+  ],
+  "scripts": [
+    "scripts/create_selfie.js"
+  ]
+}

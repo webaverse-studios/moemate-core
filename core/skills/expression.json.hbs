@@ -1,0 +1,24 @@
+  {
+    "name": "moemate_core:expression_skill",
+    "displayName": "Expression",
+    "description": "The companion will give a response, and associate and emotion with it.",
+    "skill": "EXPRESSION",
+    "prompt": "Your avatar will say the given text. Use this command when a text may include emotion or mood. Use only the knowledge you have. Must add at least one emotion that fits your response at the end of the sentence between < >. Emotions must be one of {{#each validEmotions}}{{this}} {{/each}}",
+    "value": "<joy> Hello! Nice to see you are back!",
+    "progressive": "sentence",
+    "format": "{{#if user}}{{{formatForJSON user}}}: {{/if}}{{{formatForJSON value}}}",
+    "handlerHook": "moemate_core:handle_skill_expression",
+
+    "fn_name": "expression",
+    "fn_desc": "Use this to to make your avatar say text with emotes embedded in the text. The emote must be specified between < >.",
+    "fn_parameters": {
+        "type": "object",
+        "properties": {
+            "text": {
+                "type": "string",
+                "description": "The base text with an embedded emote. For e.g. \"Hi there <excited>!\" will trigger the emote 'excited'. The valid emotes to use are: [{{#each validEmotions}} \"{{this}}\" {{#unless @last}},{{/unless}} {{/each}}] "
+            }
+        },
+        "required": ["text"]
+    }
+  }

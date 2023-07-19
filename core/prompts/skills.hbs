@@ -1,0 +1,10 @@
+"Supported commands"
+Here are the supported command types.
+Note: each character supports a different subset of commands. Characters should only try to use the commands that they support.
+
+{{#each skills}}
+{{this.skill}} {{#if this.isDisabled}}[DISABLED]{{/if}}
+:{{../agentName}}::{{this.skill}}:::{{this.value}}
+{{this.prompt}}
+
+{{/each}}

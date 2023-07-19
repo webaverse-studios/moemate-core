@@ -1,0 +1,26 @@
+  {
+    "name": "moemate_core:emote_skill",
+    "displayName": "Emotion",
+    "description": "Triggers an occational discreet emotion from the companion. Such as 'joy' or 'angry'",
+    "skill": "EMOTE",
+    "prompt": "Trigger a discrete emote reaction on the avatar. Use it only occasionally to highlight an important message. Do not use it often, because that would annoy the user.\n emote must be one of: {{validEmotions}}",
+    "value": "{{validEmotions.[0]}}",
+    "format": "{{{formatForJSON user}}} emotes {{{formatForJSON value}}}",
+    "handlerHook": "moemate_core:handle_skill_emote",
+
+    "fn_name": "emote",
+    "fn_desc": "Trigger a discrete emote reaction on the avatar. Use it only occasionally to highlight an important message. Do not use it often, because that would annoy the user.",
+    "fn_parameters": {
+        "type": "object",
+        "properties": {
+            "emote_name": {
+                "type": "string",
+                "description": "The emote to trigger. e.g. \"excited\""
+                {{#if validEmotions}}
+                ,"enum": [{{#each validEmotions}} "{{this}}" {{#unless @last}},{{/unless}} {{/each}}]
+                {{/if}}
+            }
+        },
+        "required": ["emote_name"]
+    }
+  }

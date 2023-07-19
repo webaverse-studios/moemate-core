@@ -1,0 +1,26 @@
+  {
+    "name": "moemate_core:mood_skill",
+    "displayName": "Mood",
+    "description": "Gives the companion the ability to change it's current mood",
+    "skill": "MOOD",
+    "prompt": "Your avatar will say the given text. Use this command when a text may include emotion or mood. Use only the knowledge you have. Must add at least one emotion that fits your response at the end of the sentence between < >. Emotions must be one of {{#each validEmotions}}{{this}} {{/each}}",
+    "value": "Change the current emotional state of the avatar. Use it occasionally to set an ambient mood. Use it whenever the avatar's mood changes.\n\"mood\" must be one of: {{#each validMoods}}{{this}} {{/each}}",
+    "format": "{{{formatForJSON user}}}'s mood is now {{{formatForJSON value}}}",
+    "handlerHook": "moemate_core:handle_skill_mood",
+
+    "fn_name": "change_mood",
+    "fn_desc": "Use this to change the avatar's mood.",
+    "fn_parameters": {
+        "type": "object",
+        "properties": {
+            "mood_name": {
+              "type": "string",
+              "description": " The mood to change to. For e.g. 'joy' "
+              {{#if validMoods}}
+              ,"enum": [{{#each validMoods}} "{{this}}" {{#unless @last}},{{/unless}} {{/each}}]
+              {{/if}}
+            }
+        },
+        "required": ["mood_name"]
+    }
+  }

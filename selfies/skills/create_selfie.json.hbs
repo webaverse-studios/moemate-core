@@ -1,0 +1,10 @@
+  {
+    "name": "moemate-selfie:create_selfie_skill",
+    "displayName": "Take Selfie",
+    "description": "Gives the companion the ability to take selfies that you ask for.",
+    "skill": "TAKE_SELFIE",
+    "prompt": "Your avatar will create a new selfie of yourself in a given position or pose. The description should specify your clothing status Clothed or Unclothed and a pose from this list: {{poses}}",
+    "value": "Waist up. Peace Sign.",
+    "format": "{{{formatForJSON user}}} is taking a {{{formatForJSON value}}} selfie.",
+    "handlerHook": "moemate-selfie:handle_skill_create_selfie"
+  }

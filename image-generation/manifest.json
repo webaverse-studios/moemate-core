@@ -1,0 +1,26 @@
+{
+  "name": "image-generation",
+  "title": "Image Generation",
+  "description": "Gives the companion the ability to generate images with Stable Diffusion",
+  "authors": [
+    {
+      "name": "Webaverse",
+      "email": "support@webaverse.com",
+      "url": "https://www.moemate.io"
+    }
+  ],
+  "version": "1.0",
+  "compatibility": {
+    "minimum": "0.8.8",
+    "verified": "0.8.8"
+  },
+  "models": [
+    "models/imaginairy.json.hbs"
+  ],
+  "skills": [
+    "skills/create_image.json.hbs"
+  ],
+  "scripts": [
+    "scripts/create_image.js"
+  ]
+}
